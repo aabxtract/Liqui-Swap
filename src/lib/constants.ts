@@ -1,4 +1,5 @@
-import type { Token, Pool, UserBalance } from '@/lib/types';
+import type { Token, Pool } from '@/lib/types';
+import { Address } from 'viem';
 
 export const TOKENS: Token[] = [
   { id: 'usdc', name: 'USD Coin', symbol: 'USDC', logoColor: '#2775ca' },
@@ -6,6 +7,14 @@ export const TOKENS: Token[] = [
   { id: 'weth', name: 'Wrapped Ether', symbol: 'WETH', logoColor: '#716b94' },
   { id: 'zora', name: 'Zora', symbol: 'ZORA', logoColor: '#8F00FF' },
 ];
+
+export const TOKEN_CONTRACTS: Record<string, Address> = {
+    // Sepolia Testnet Addresses
+    'USDC': '0x94a9D9AC8a22534E3FaCa9F4e7F2E2cf85d5E4C8',
+    'USDT': '0x966953B02F103A6553a7391374A6156a59612086', // This is a mock USDT, not official
+    'WETH': '0x7b79995e5f793A07Bc00c21412e50Eaae098E7F9',
+    'ZORA': '0x45ee2614838d5F35401345F949A3311029143719', // This is a mock ZORA, not official
+}
 
 export const INITIAL_POOLS: Pool[] = [
   {
@@ -25,14 +34,5 @@ export const INITIAL_POOLS: Pool[] = [
     totalSupply: 22360,
   },
 ];
-
-export const INITIAL_USER_BALANCE: UserBalance = {
-  USDC: 20000,
-  USDT: 20000,
-  WETH: 10,
-  ZORA: 50000,
-  'WETH-USDC-LP': 0,
-  'ZORA-WETH-LP': 0,
-};
 
 export const SWAP_FEE = 0.003; // 0.3%

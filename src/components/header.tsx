@@ -1,5 +1,5 @@
-import { UserWallet } from "./user-wallet";
-import { Sheet, Waypoints } from "lucide-react";
+import { ConnectButton } from "./connect-button";
+import { Waypoints } from "lucide-react";
 
 export function Header() {
   return (
@@ -11,7 +11,7 @@ export function Header() {
             LiquiSwap
           </h1>
         </div>
-        <UserWallet />
+        <ConnectButton />
       </div>
     </header>
   );
