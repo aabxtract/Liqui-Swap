@@ -15,8 +15,8 @@ import { Separator } from "./ui/separator";
 export function UserWallet() {
   const { balances, tokens } = useLiquidity();
   const allTokens = [...tokens, 
-    { id: 'weth-dai-lp', name: 'WETH-DAI LP', symbol: 'WETH-DAI-LP', logoColor: '#aa4d8d' },
-    { id: 'lqs-weth-lp', name: 'LQS-WETH LP', symbol: 'LQS-WETH-LP', logoColor: '#8338ec' },
+    { id: 'weth-usdc-lp', name: 'WETH-USDC LP', symbol: 'WETH-USDC-LP', logoColor: '#aa4d8d' },
+    { id: 'zora-weth-lp', name: 'ZORA-WETH LP', symbol: 'ZORA-WETH-LP', logoColor: '#8338ec' },
   ];
 
   return (

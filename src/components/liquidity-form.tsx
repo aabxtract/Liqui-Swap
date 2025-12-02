@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useMemo, useEffect } from "react";
-import { Plus, Minus } from "lucide-react";
+import { Plus, Minus, ArrowDown } from "lucide-react";
 import { useLiquidity } from "@/hooks/use-liquidity";
 import { Button } from "./ui/button";
 import { TokenInput } from "./token-input";
@@ -126,7 +126,7 @@ export function LiquidityForm() {
                         balance={balances[selectedPool.token1.symbol] || 0}
                         isOutput={true}
                     />
-                    <Button size="lg" className="w-full" onClick={handleAddLiquidity} disabled={!amountA || !amountB || parseFloat(amountA) <= 0 || parseFloat(amountA) > balances[selectedPool.token0.symbol] || parseFloat(amountB) > balances[selectedPool.token1.symbol]}>
+                    <Button size="lg" className="w-full" onClick={handleAddLiquidity} disabled={!amountA || !amountB || parseFloat(amountA) <= 0 || parseFloat(amountA) > (balances[selectedPool.token0.symbol] || 0) || parseFloat(amountB) > (balances[selectedPool.token1.symbol] || 0)}>
                         Add Liquidity
                     </Button>
                 </TabsContent>
